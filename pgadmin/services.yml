@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  pgadmin:
+    image: thajeztah/pgadmin4
+    container_name: pgadmin
+    restart: always
+    ports:
+        - 5050:5050
+    volumes:
+      - pgadmin:/pgadmin
+    networks:
+      - pg

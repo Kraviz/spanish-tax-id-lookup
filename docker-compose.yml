@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+
+  backend:
+    extends:
+      file: backend/services.yml
+      service: backend
+    networks:
+      - pg
+
+  postgres:
+    extends:
+      file: postgres/services.yml
+      service: postgres
+
+  pgadmin:
+    extends:
+      file: pgadmin/services.yml
+      service: pgadmin
+
+volumes:
+  postgres:
+  pgadmin:
+
+networks:
+  default:
+    external:
+      name: pg
+
+  pg:
+    external: true
