@@ -24,9 +24,4 @@ volumes:
   pgadmin:
 
 networks:
-  default:
-    external:
-      name: pg
-
   pg:
-    external: true

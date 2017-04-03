@@ -2,7 +2,7 @@ version: "2"
 
 services:
   backend:
-    image: backend
+    build: .
     container_name: backend
     restart: always
     ports:
