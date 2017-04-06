@@ -1,0 +1,9 @@
+{% if latest_cif_list %}
+    <ul>
+    {% for cif in latest_cif_list %}
+        <li><a href="/cif/lookup/{{ cif.cif }}/">{{ cif.cif }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No cifs are available.</p>
+{% endif %}

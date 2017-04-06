@@ -3,9 +3,10 @@ version: "2"
 services:
   backend:
     build: .
+    command: python manage.py runserver 0.0.0.0:8000
     container_name: backend
     restart: always
     ports:
-      - 5030:5000
+      - 8000:8000
     networks:
       - pg

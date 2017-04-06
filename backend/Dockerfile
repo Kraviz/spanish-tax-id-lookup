@@ -13,4 +13,5 @@ RUN apt-get update && \
 COPY requirements /tmp/requirements
 RUN pip install -r /tmp/requirements/pip.txt
 
-EXPOSE 5000
+COPY src /src
+WORKDIR /src

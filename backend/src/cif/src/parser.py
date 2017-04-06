@@ -1,4 +1,6 @@
 import pandas as pd
+import os
+from django.conf import settings
 
 
 class Parser(object):
@@ -11,7 +13,7 @@ class Parser(object):
     def organization(self):
         s = self.cif[0].lower()
 
-        mapper = pd.read_csv('/home/geoorge/.virtualenvs/django/backend/cif/src/data/organization_mapper.csv',
+        mapper = pd.read_csv(os.path.join(settings.BASE_DIR, 'cif/src/data/organization_mapper.csv'),
                              index_col=0, sep=';', squeeze=True)
 
         if s in mapper.index:
@@ -23,7 +25,7 @@ class Parser(object):
     def province(self):
         s = self.cif[1:3]
 
-        mapper = pd.read_csv('/home/geoorge/.virtualenvs/django/backend/cif/src/data/province_mapper.csv',
+        mapper = pd.read_csv(os.path.join(settings.BASE_DIR, 'cif/src/data/province_mapper.csv'),
                              index_col=0, sep=';', squeeze=True)
         mapper.index = mapper.index.astype('str')
 
