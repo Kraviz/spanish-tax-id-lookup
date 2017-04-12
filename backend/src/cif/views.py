@@ -31,6 +31,7 @@ def lookup(request, cif):
         c = Cif(number=cif, created=datetime.datetime.now(), modified=datetime.datetime.now(), data=data)
         c.save()
 
+
         return JsonResponse(data)
 
     return HttpResponse('CIF number not valid')
